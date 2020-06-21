@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\job;
+use Illuminate\Support\Facades\DB;
 class JoblistController extends Controller
 {
     public function index()
     {
-        return view('joblist');
+        $jobs = DB::table('job')->paginate(15);
+        return view('joblist', ['jobs' => $jobs]);
     }
 }
