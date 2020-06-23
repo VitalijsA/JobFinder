@@ -6,6 +6,7 @@
                 <div class="card">
                     <h4 class="list-group-item list-group-item-primary">Add a new vacancy:</h4>
                     <div class="card-body">
+                            {{ Form::open(['action' => 'JobController@store', 'class' => 'form-horizontal']) }}
                         @csrf
                             <div class="form-group row">
                             {{ Form::label('title', 'Title', ['class' => 'col-md-4 control-label text-md-right']) }}
@@ -32,7 +33,7 @@
                             <div class="form-group row">
                             {{ Form::label('category', 'Category', ['class' => 'col-md-4 control-label text-md-right']) }}
                             <div class="col-md-6 mt-1">
-                            {{ Form::select('size', array('Part-time' => 'Part-time', 'Full-time' => 'Full-time'), 'Full-time') }}
+                            {{ Form::select('category', array('Part-time' => 'Part-time', 'Full-time' => 'Full-time'), 'Full-time') }}
                             </div>
                             </div>
                             <div class="form-group row">
