@@ -1,6 +1,6 @@
 .jobbox{
     width: 100%;
-    height: 100px;
+    height: 120px;
 }
 .pagebut{
     margin: auto;
@@ -54,4 +54,14 @@
       list-style-type:none;
       padding:0;
       margin:0;
+  }
+  .forbtn{
+    margin-left: 48px;
+  }
+  #title{
+    padding: 0 !important;
+  }
+  .advertisement{
+    margin: 50px;
+    width: 100px;
   }

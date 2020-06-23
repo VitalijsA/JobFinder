@@ -16,7 +16,6 @@ class JobController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required|string|min:2|max:100',
-            'description' => 'required|string|min:2|max:25',
             'salary' =>'required|numeric|min:2',
             'emailaddress' => 'required|string|min:3|max:50',
             'phonenum' => 'required|numeric|min:2',

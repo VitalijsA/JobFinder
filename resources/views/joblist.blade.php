@@ -10,7 +10,9 @@
             <div class="col-sm">
             @foreach($jobs as $job)
                 <div class="card jobbox">
-                        <div class="text-uppercase font-weight-bold mt-1 ml-5 color text-danger">{{ $job->title }}</div>
+                        <div class="forbtn">
+                        <button id="title" class="btn pl-5 pt-0 pb-0 text-uppercase font-weight-bold text-left text-danger" type="button" onclick="window.location='{{ route('joblist.show', $job->id)}}'">{{ $job->title }}</button>
+                        </div>
                         <div class="bg-info salary text-white">Salary: {{ $job->salary }} Eur</div>
                         <ul class="unlisted">
                         <li>

@@ -20,17 +20,6 @@
                             </div>
                             </div>
                             <div class="form-group row">
-                            {{ Form::label('description', 'Description', ['class' => 'col-md-4 control-label text-md-right']) }}
-                            <div class="col-md-6">
-                                {{ Form::text('description', '', ['class' => 'form-control '.($errors->has('description') ? ' is-invalid' : '') ]) }}
-                                @if ($errors->has('description'))
-                                    <span class="invalid-feedback">
-                            <strong>{{ $errors->first('phonenum') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                            </div>
-                            <div class="form-group row">
                             {{ Form::label('category', 'Category', ['class' => 'col-md-4 control-label text-md-right']) }}
                             <div class="col-md-6 mt-1">
                             {{ Form::select('category', array('Part-time' => 'Part-time', 'Full-time' => 'Full-time'), 'Full-time') }}
@@ -80,6 +69,17 @@
                         @endif
                         </div>
                         </div>
+                        <div class="form-group row">
+                            {{ Form::label('description', 'Description', ['class' => 'col-md-4 control-label text-md-right']) }}
+                            <div class="col-md-6">
+                                {{ Form::textarea('description', '', ['name'=> 'description', 'id'=> 'textarea', 'class' => 'form-control '.($errors->has('description') ? ' is-invalid' : '') ]) }}
+                                @if ($errors->has('description'))
+                                    <span class="invalid-feedback">
+                            <strong>{{ $errors->first('phonenum') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                            </div>
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 {{ Form::submit('Post vacancy', ['class' => 'btn btn-primary']) }}

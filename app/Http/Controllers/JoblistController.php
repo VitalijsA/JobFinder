@@ -12,4 +12,7 @@ class JoblistController extends Controller
         $jobs = DB::table('job')->paginate(15);
         return view('joblist', ['jobs' => $jobs]);
     }
+    public function show($id){
+        return view('job_show', ['job' => job::FindOrFail($id)]);
+    }
 }

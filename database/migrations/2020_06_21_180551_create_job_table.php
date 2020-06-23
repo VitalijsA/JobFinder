@@ -17,7 +17,7 @@ class CreateJobTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title', 100);
-            $table->string('description', 1000);
+            $table->text('description');
             $table->integer('salary');
             $table->string('emailaddress');
             $table->integer('phonenum');
