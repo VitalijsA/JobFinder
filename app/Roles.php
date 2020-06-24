@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class job extends Model
+class Roles extends Model
 {
-    protected $table = 'job';
     public function Users()
     {
         return $this->belongsTo('App\User');

@@ -34,28 +34,34 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
                     </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li><a class="text-white nav-link float-left" href="/lang/lv">LV</a></li>
+                        <li><a class="text-white nav-link" href="/lang/en">EN</a></li>
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="text-white nav-link" href="{{ route('login') }}">{{ __('messages.Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="text-white nav-link" href="{{ route('register') }}">{{ __('messages.Register') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a id="navbarDropdown" class="text-white nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ __('messages.Hello')}} {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('user.joblist', Auth::user()->id) }}">
+                                        {{ __('View My Jobs') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('user.profile', Auth::user()->id) }}">
+                                        {{ __('View Profile') }}
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -72,7 +78,11 @@
                 </div>
             </div>
         </nav>
-
+        <ul class="float-left w-100 bg-blue mb-3" id="navbar">
+            <li class="float-left"><a class="text-white d-block p-3" href="{{ url('/joblist') }}">{{ __('messages.Find_a_job') }}</a></li>
+            <li class="float-left"><a class="text-white d-block p-3" href="{{ url('/create') }}">{{ __('messages.Create_a_job') }}</a></li>
+            <li class="float-right"><a class="text-white d-block p-3" href="#contact">{{ __('messages.Contact') }}</a></li>
+        </ul>
         <main class="py-4">
             @yield('content')
         </main>

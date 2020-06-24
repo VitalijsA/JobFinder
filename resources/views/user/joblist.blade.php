@@ -2,9 +2,10 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}" >
 <div class="row-fluid">
+@if(!$jobs->isEmpty())
     <div class="container h-100">
     <div class="h1">
-    {{ __('messages.All_vacancies') }}
+    {{ __('My posted vacancies') }}
     </div>
         <div class="row">
             <div class="col-sm">
@@ -31,13 +32,29 @@
                                 </li>
                             </ul>
                         </div>
+                        <div class="float-right ml-5" style="">
+                        <ul>
+                                <li>
+                                <a class="d-block p-2" href="{{action('JobController@edit', $job->id)}}">Edit</a></li>
+                                </li>
+                                <li>
+                                <a class="d-block p-2" href="{{action('JobController@destroy', $job->id)}}">Delete</a></li>
+                                </li>
+                            </ul>
+                        </div>
                 </div>
             @endforeach
-            <div class="pagebut">
-                {{ $jobs->links() }}
-            </div>
             </div>
         </div>
     </div>
+    @else
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                        <h4 class="list-group-item ">You have no active vacancies yet!</h4>
+                </div>
+            </div>
+        </div>
+    @endif
 </div>
 @endsection

@@ -4,14 +4,15 @@
         <div class="row">
             <div class="col-sm">
                 <div class="card">
-                    <h4 class="list-group-item list-group-item-primary">{{ __('messages.Add_a_new_vacancy') }}:</h4>
+                    <h4 class="list-group-item list-group-item-primary">{{ __('Edit vacancy') }}:</h4>
                     <div class="card-body">
-                            {{ Form::open(['action' => 'JobController@store', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) }}
+                            {{ Form::open(['action' => 'JobController@update', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) }}
+                            {{ Form::hidden('job_id', $job->id) }}
                         @csrf
                             <div class="form-group row">
                             {{ Form::label('title', __('messages.Title'), ['class' => 'col-md-4 control-label pt-2 text-md-right']) }}
                             <div class="col-md-6">
-                                {{ Form::text('title', '', ['class' => 'form-control '.($errors->has('title') ? ' is-invalid' : '')]) }}
+                                {{ Form::text('title', $job->title, ['class' => 'form-control '.($errors->has('title') ? ' is-invalid' : '')]) }}
                                 @if ($errors->has('title'))
                                     <span class="invalid-feedback">
                             <strong>{{ $errors->first('title') }}</strong>
@@ -28,7 +29,7 @@
                             <div class="form-group row">
                             {{ Form::label('salary', __('messages.Salary'), ['class' => 'col-md-4 pt-2 control-label text-md-right']) }}
                             <div class="col-md-6">
-                                {{ Form::text('salary', '', ['class' => 'form-control '.($errors->has('salary') ? ' is-invalid' : '')]) }}
+                                {{ Form::text('salary', $job->salary, ['class' => 'form-control '.($errors->has('salary') ? ' is-invalid' : '')]) }}
                                 @if ($errors->has('salary'))
                                     <span class="invalid-feedback">
                             <strong>{{ $errors->first('salary') }}</strong>
@@ -39,7 +40,7 @@
                         <div class="form-group row">
                             {{ Form::label('emailaddress', __('messages.Email_address'), ['class' => 'pt-2 col-md-4 control-label text-md-right']) }}
                             <div class="col-md-6">
-                                {{ Form::text('emailaddress', '', ['class' => 'form-control '.($errors->has('emailaddress') ? ' is-invalid' : '')]) }}
+                                {{ Form::text('emailaddress', $job->emailaddress, ['class' => 'form-control '.($errors->has('emailaddress') ? ' is-invalid' : '')]) }}
                                 @if ($errors->has('emailaddress'))
                                     <span class="invalid-feedback">
                             <strong>{{ $errors->first('emailaddress') }}</strong>
@@ -50,7 +51,7 @@
                             <div class="form-group row">
                             {{ Form::label('phonenum', __('messages.Phone_number'), ['class' => 'pt-2 col-md-4 control-label text-md-right']) }}
                             <div class="col-md-6">
-                                {{ Form::number('phonenum', '', ['class' => 'form-control '.($errors->has('phonenum') ? ' is-invalid' : '') ]) }}
+                                {{ Form::number('phonenum', $job->phonenum, ['class' => 'form-control '.($errors->has('phonenum') ? ' is-invalid' : '') ]) }}
                                 @if ($errors->has('phonenum'))
                                     <span class="invalid-feedback">
                             <strong>{{ $errors->first('phonenum') }}</strong>
@@ -61,7 +62,7 @@
                         <div class="form-group row">
                         {{ Form::label('dateuntil', __('messages.Date_until'), ['class' => 'pt-2 col-md-4 control-label text-md-right']) }}
                         <div class="col-md-6">
-                        {{ Form::date('dateuntil', '', ['class' =>  'input form-control '.($errors->has('dateuntil') ? ' is-invalid' : '')]) }}
+                        {{ Form::date('dateuntil', $job->dateuntil, ['class' =>  'input form-control '.($errors->has('dateuntil') ? ' is-invalid' : '')]) }}
                         @if ($errors->has('dateuntil'))
                             <span class="invalid-feedback">
                             <strong>{{ $errors->first('dateuntil') }}</strong>
@@ -72,7 +73,7 @@
                         <div class="form-group row">
                             {{ Form::label('description', __('messages.Description'), ['class' => 'pt-2 col-md-4 control-label text-md-right']) }}
                             <div class="col-md-6">
-                                {{ Form::textarea('description', '', ['name'=> 'description', 'id'=> 'textarea', 'class' => 'form-control '.($errors->has('description') ? ' is-invalid' : '') ]) }}
+                                {{ Form::textarea('description', $job->description, ['name'=> 'description', 'id'=> 'textarea', 'class' => 'form-control '.($errors->has('description') ? ' is-invalid' : '') ]) }}
                                 @if ($errors->has('description'))
                                     <span class="invalid-feedback">
                             <strong>{{ $errors->first('descrption') }}</strong>
@@ -93,7 +94,7 @@
                             </div>
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
-                                {{ Form::submit(__('messages.Post_a_vacancy'), ['class' => 'btn btn-primary']) }}
+                                {{ Form::submit(__('Save changes'), ['class' => 'btn btn-primary']) }}
                             </div>
                         </div>
                         {{ Form::close() }}
