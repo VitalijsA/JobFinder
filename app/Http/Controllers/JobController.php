@@ -20,6 +20,7 @@ class JobController extends Controller
             'emailaddress' => 'required|string|min:3|max:50',
             'phonenum' => 'required|numeric|min:2',
             'dateuntil' => 'required|date',
+            'image' => 'required|file|image|max:10000',
         ]);
         $job = new job();
         $job->title = $request['title'];
@@ -29,6 +30,7 @@ class JobController extends Controller
         $job->emailaddress = $request['emailaddress'];
         $job->phonenum = $request['phonenum'];
         $job->dateuntil = $request['dateuntil'];
+        $job->image = $request['image']->store('uploads','public');
         $job->save();
         
 

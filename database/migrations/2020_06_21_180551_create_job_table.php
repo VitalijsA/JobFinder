@@ -23,6 +23,7 @@ class CreateJobTable extends Migration
             $table->integer('phonenum');
             $table->string('keyword', 25);
             $table->date('dateuntil');
+            $table->string('image')->nullable();
         });
     }
 

@@ -9,21 +9,28 @@
         <div class="row">
             <div class="col-sm">
             @foreach($jobs as $job)
-                <div class="card jobbox">
-                        <div class="forbtn">
-                        <button id="title" class="btn pl-5 pt-0 pb-0 text-uppercase font-weight-bold text-left text-danger" type="button" onclick="window.location='{{ route('joblist.show', $job->id)}}'">{{ $job->title }}</button>
+                <div class="border border-secondary d-flex mt-1 p-2">
+                        <div class="float-left pl-1 pt-1">
+                            <img src="{{asset('storage/'.$job->image)}}" width="130px" height="90px">
                         </div>
-                        <div class="bg-info salary text-white">Salary: {{ $job->salary }} Eur</div>
-                        <ul class="unlisted">
-                        <li>
-                            <img class="ml-5" src="{{asset('images/mail.png')}}" height= "13px", width="20px">
-                            {{$job->emailaddress}}
-                        </li>
-                        <li class="ml-1">
-                            <img class="ml-5 mr-1" src="{{asset('images/location.png')}}" height= "13px", width="10px">
-                            {{$job->emailaddress}}
-                        </li>
-                        </ul>
+                        <div class="ml-3 p-0">
+                            <div>
+                                <button id="title" class="btn pl-5 pt-0 pb-0 text-uppercase font-weight-bold text-left text-danger" type="button" onclick="window.location='{{ route('joblist.show', $job->id)}}'">{{ $job->title }}</button>
+                            </div>
+                            <div class="bg-info text-white w-50">
+                            <span class="ml-1 w-25 bg-info text-white">Salary: {{ $job->salary }} Eur</span>
+                            </div>
+                            <ul>
+                                <li>
+                                    <img src="{{asset('images/mail.png')}}" height= "13px", width="20px">
+                                    {{$job->emailaddress}}
+                                </li>
+                                <li class="ml-1 p-0">
+                                    <img class="mr-1" src="{{asset('images/location.png')}}" height= "13px", width="10px">
+                                    {{$job->emailaddress}}
+                                </li>
+                            </ul>
+                        </div>
                 </div>
             @endforeach
             <div class="pagebut">
