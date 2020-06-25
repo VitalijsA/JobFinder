@@ -1,5 +1,7 @@
 <?php
 return [
+    'Name' => 'Vārds',
+    'Surname' =>'Uzvārds',
     'Login' => 'Pieslēgties',
     'Register' => 'Reģistrēties',
     'All_vacancies' => 'Visas vakances',
@@ -24,4 +26,14 @@ return [
     'Remember_me' =>'Atcerēties mani',
     'Forgot_Your_Password?' => 'Aizmirsāt paroli?',
     'Active_vacancies_right_now' => 'Šobrīd pieejamas vakances',
+    'City' => 'Pilsēta',
+    'Street' => 'Iela',
+    'My_posted_vacancies' => 'Manas vakances',
+    'View_my_jobs' => 'Manas vakances',
+    'View_profile' => 'Mans profils',
+    'My_profile' => 'Mans profils',
+    'Edit_profile' => 'Rediģēt profilu',
+    'Confirm_Password' =>'Apstiprināt paroli',
+    'Author' => 'Autors',
+    'Contactinfo' => 'Kontaktinformācija',
 ];

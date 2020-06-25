@@ -59,6 +59,28 @@
                                 @endif
                             </div>
                             </div>
+                            <div class="form-group row">
+                            {{ Form::label('city', __('messages.City'), ['class' => 'pt-2 col-md-4 control-label text-md-right']) }}
+                            <div class="col-md-6">
+                                {{ Form::text('city', $job->city, ['class' => 'form-control '.($errors->has('city') ? ' is-invalid' : '') ]) }}
+                                @if ($errors->has('city'))
+                                    <span class="invalid-feedback">
+                            <strong>{{ $errors->first('city') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                            </div>
+                            <div class="form-group row">
+                            {{ Form::label('street', __('messages.Street'), ['class' => 'pt-2 col-md-4 control-label text-md-right']) }}
+                            <div class="col-md-6">
+                                {{ Form::text('street', $job->street, ['class' => 'form-control '.($errors->has('street') ? ' is-invalid' : '') ]) }}
+                                @if ($errors->has('street'))
+                                    <span class="invalid-feedback">
+                            <strong>{{ $errors->first('street') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                            </div>
                         <div class="form-group row">
                         {{ Form::label('dateuntil', __('messages.Date_until'), ['class' => 'pt-2 col-md-4 control-label text-md-right']) }}
                         <div class="col-md-6">

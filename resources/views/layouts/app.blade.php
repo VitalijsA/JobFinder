@@ -57,15 +57,15 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('user.joblist', Auth::user()->id) }}">
-                                        {{ __('View My Jobs') }}
+                                        {{ __('messages.View_my_jobs') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('user.profile', Auth::user()->id) }}">
-                                        {{ __('View Profile') }}
+                                        {{ __('messages.View_profile') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('messages.Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -82,7 +82,7 @@
         <div class="container">
             <li class="float-left"><a class="text-white d-block p-2" href="{{ url('/joblist') }}">{{ __('messages.Find_a_job') }}</a></li>
             <li class="float-left"><a class="text-white d-block p-2" href="{{ url('/create') }}">{{ __('messages.Create_a_job') }}</a></li>
-            <li class="float-right"><a class="text-white d-block p-2" href="#contact">{{ __('messages.Contact') }}</a></li>
+            <li class="float-right"><a class="text-white d-block p-2" href="{{ url('/contact') }}">{{ __('messages.Contact') }}</a></li>
             </div>
         </ul>
         <main class="py-4">

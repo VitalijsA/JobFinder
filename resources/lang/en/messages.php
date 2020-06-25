@@ -1,5 +1,7 @@
 <?php
 return [
+    'Name' => 'Name',
+    'Surname' =>'Surname',
     'Login' => 'Login',
     'Register' => 'Register',
     'All_vacancies' => 'All Vacancies',
@@ -24,4 +26,13 @@ return [
     'Remember_me' =>'Remember me',
     'Forgot_Your_Password?' => 'Forgot Your Password?',
     'Active_vacancies_right_now' =>'Active vacancies right now',
+    'City' => 'City',
+    'Street' => 'Street',
+    'My_posted_vacancies' => 'My posted vacancies',
+    'View_my_jobs' => 'My jobs',
+    'View_profile' => 'View profile',
+    'My_profile' => 'My profile',
+    'Edit_profile' => 'Edit profile',
+    'Confirm_Password' =>'Confirm Password',
+    'Author' => 'Author',
 ];

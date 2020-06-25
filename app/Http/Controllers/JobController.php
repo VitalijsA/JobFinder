@@ -28,6 +28,8 @@ class JobController extends Controller
             'title' => 'required|string|min:2|max:100',
             'salary' =>'required|numeric|min:2',
             'emailaddress' => 'required|string|min:3|max:50',
+            'city' => 'required|string|min:2|max:100',
+            'street' => 'required|string|min:2|max:100',
             'phonenum' => 'required|numeric|min:2',
             'dateuntil' => 'required|date',
             'image' => 'required|file|image|max:10000',
@@ -37,6 +39,8 @@ class JobController extends Controller
         $job->description = $request['description'];
         $job->keyword = $request['category'];
         $job->salary = $request['salary'];
+        $job->city = $request['city'];
+        $job->street = $request['street'];
         $job->emailaddress = $request['emailaddress'];
         $job->phonenum = $request['phonenum'];
         $job->dateuntil = $request['dateuntil'];
@@ -55,6 +59,8 @@ class JobController extends Controller
             'title' => 'required|string|min:2|max:100',
             'salary' =>'required|numeric|min:2',
             'emailaddress' => 'required|string|min:3|max:50',
+            'city' => 'required|string|min:2|max:100',
+            'street' => 'required|string|min:2|max:100',
             'phonenum' => 'required|numeric|min:2',
             'dateuntil' => 'required|date',
             'image' => 'file|image|max:10000',
@@ -64,6 +70,8 @@ class JobController extends Controller
         $job->description = $request['description'];
         $job->keyword = $request['category'];
         $job->salary = $request['salary'];
+        $job->city = $request['city'];
+        $job->street = $request['street'];
         $job->emailaddress = $request['emailaddress'];
         $job->phonenum = $request['phonenum'];
         $job->dateuntil = $request['dateuntil'];

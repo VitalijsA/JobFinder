@@ -4,8 +4,8 @@
 <div class="row-fluid">
 @if(!$jobs->isEmpty())
     <div class="container h-100">
-    <div class="h1">
-    {{ __('My posted vacancies') }}
+    <div class="h1 text-white">
+    {{ __('messages.My_posted_vacancies') }}
     </div>
         <div class="row">
             <div class="col-sm">
@@ -18,7 +18,7 @@
                             <div>
                                 <button id="title" class="btn pl-5 pt-0 pb-0 text-uppercase font-weight-bold text-left text-danger" type="button" onclick="window.location='{{ route('joblist.show', $job->id)}}'">{{ $job->title }}</button>
                             </div>
-                            <div class="bg-info text-white w-50">
+                            <div class="bg-info text-white">
                             <span class="ml-1 w-25 bg-info text-white">{{ __('messages.Salary') }} {{ $job->salary }} Eur</span>
                             </div>
                             <ul>
@@ -28,7 +28,7 @@
                                 </li>
                                 <li class="ml-1 p-0">
                                     <img class="mr-1" src="{{asset('images/location.png')}}" height= "13px", width="10px">
-                                    {{$job->emailaddress}}
+                                    {{$job->city}}, {{$job->street}}
                                 </li>
                             </ul>
                         </div>

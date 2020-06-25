@@ -35,3 +35,6 @@ Route::get('/user/{id}/joblist', 'UserController@joblist')->name('user.joblist')
 Route::get('/delete/{id}', 'JobController@destroy');
 Route::get('/edit/{id}', 'JobController@edit');
 Route::post('/update', 'JobController@update');
+
+Route::get('/contact', 'ContactController@contact');
+Route::post('/profile/update', 'UserController@update');

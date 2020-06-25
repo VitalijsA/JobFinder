@@ -20,6 +20,8 @@ class CreateJobTable extends Migration
             $table->text('description');
             $table->integer('salary');
             $table->string('emailaddress');
+            $table->string('city', 100);
+            $table->string('street', 100);
             $table->integer('phonenum');
             $table->string('keyword', 25);
             $table->date('dateuntil');

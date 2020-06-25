@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\job;
+use Auth;
 
 class UserController extends Controller
 {
@@ -68,9 +69,21 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|min:2|max:100',
+            'surname' =>'required|string|min:2|max:100',
+            'email' => 'required|string|min:3|max:50',
+        ]);
+        $user = User::find(Auth::id());
+        $user->name = $request['name'];
+        $user->surname = $request['surname'];
+        $user->email = $request['email'];
+        $user->save();
+        
+        $user = User::find(Auth::id());
+        if ($user) return view('user.profile')->withUser($user);
     }
 
     /**
@@ -86,7 +99,7 @@ class UserController extends Controller
     public function profile($id)
     {
         $user = User::find($id);
-        if ($user){
+        if ($user && Auth::id() == $id){
             return view('user.profile')->withUser($user);
         }else {
             return redirect()->back();
@@ -95,7 +108,7 @@ class UserController extends Controller
     public function joblist($id)
     {
         $user = User::find($id);
-        if ($user){
+        if ($user && Auth::id() == $id){
             return view('user.joblist')->with (['jobs' => job::where('user_id', $id)->get()]);
         }else {
             return redirect()->back();
