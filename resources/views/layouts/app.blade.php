@@ -78,10 +78,12 @@
                 </div>
             </div>
         </nav>
-        <ul class="float-left w-100 bg-blue mb-3" id="navbar">
-            <li class="float-left"><a class="text-white d-block p-3" href="{{ url('/joblist') }}">{{ __('messages.Find_a_job') }}</a></li>
-            <li class="float-left"><a class="text-white d-block p-3" href="{{ url('/create') }}">{{ __('messages.Create_a_job') }}</a></li>
-            <li class="float-right"><a class="text-white d-block p-3" href="#contact">{{ __('messages.Contact') }}</a></li>
+        <ul class="navbar navbar-expand-md float-left w-100 bg-blue mb-3" id="navbar">
+        <div class="container">
+            <li class="float-left"><a class="text-white d-block p-2" href="{{ url('/joblist') }}">{{ __('messages.Find_a_job') }}</a></li>
+            <li class="float-left"><a class="text-white d-block p-2" href="{{ url('/create') }}">{{ __('messages.Create_a_job') }}</a></li>
+            <li class="float-right"><a class="text-white d-block p-2" href="#contact">{{ __('messages.Contact') }}</a></li>
+            </div>
         </ul>
         <main class="py-4">
             @yield('content')

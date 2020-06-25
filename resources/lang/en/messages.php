@@ -23,4 +23,5 @@ return [
     'Password' => 'Password',
     'Remember_me' =>'Remember me',
     'Forgot_Your_Password?' => 'Forgot Your Password?',
+    'Active_vacancies_right_now' =>'Active vacancies right now',
 ];

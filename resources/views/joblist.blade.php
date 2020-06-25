@@ -3,13 +3,13 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}" >
 <div class="row-fluid">
     <div class="container h-100">
-    <div class="h1">
+    <div class="h1 text-white">
     {{ __('messages.All_vacancies') }}
     </div>
         <div class="row">
             <div class="col-sm">
             @foreach($jobs as $job)
-                <div class="border border-secondary d-flex mt-1 p-2">
+                <div class="bg-white border border-secondary d-flex mt-1 p-2">
                         <div class="float-left pl-1 pt-1">
                             <img src="{{asset('storage/'.$job->image)}}" width="130px" height="90px">
                         </div>

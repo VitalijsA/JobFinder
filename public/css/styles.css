@@ -70,3 +70,8 @@
   li a:hover {
     background-color: rgb(11, 176, 240);
   }
+  .bg{
+    background-image: url('/images/jobs.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }

@@ -65,6 +65,9 @@ section {
 }
 
 body {
+  background-image: url('/images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
   margin: 0;
   font-family: "Nunito", sans-serif;
   font-size: 0.9rem;

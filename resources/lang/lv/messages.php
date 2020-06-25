@@ -3,7 +3,7 @@ return [
     'Login' => 'Pieslēgties',
     'Register' => 'Reģistrēties',
     'All_vacancies' => 'Visas vakances',
-    'Find_a_job' => 'Atrast vakanci',
+    'Find_a_job' => 'Apskatīt vakances',
     'Create_a_job' => 'Izveidot vakanci',
     'Title' => 'Nosaukums:',
     'Category' => 'Kategorija:',
@@ -23,4 +23,5 @@ return [
     'Password' => 'Parole:',
     'Remember_me' =>'Atcerēties mani',
     'Forgot_Your_Password?' => 'Aizmirsāt paroli?',
+    'Active_vacancies_right_now' => 'Šobrīd pieejamas vakances',
 ];
